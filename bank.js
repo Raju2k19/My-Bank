@@ -30,10 +30,14 @@ document.getElementById('addWithdraw').addEventListener('click', ()=>{
     const withdrawAmountNumber = getInputNumber ('withdrawAmount');
     console.log(withdrawAmountNumber);
 
+    updateSpanText('currentWithdraw', withdrawAmountNumber);
+    updateSpanText('currentblance', -1*withdrawAmountNumber);
+
+    document.getElementById('withdrawAmount').value = "";
 });
 
 function getInputNumber (id){
-    const amount = document.getElementById(id).value;
-    const amountNumber = parseFloat(amount);
-    return amountNumber;
-}
+    const wdAmount = document.getElementById(id).value;
+    const AmountNumber = parseFloat(wdAmount);
+    return AmountNumber;
+};
